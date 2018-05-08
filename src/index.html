@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1,user-scalable=no"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="<%= htmlWebpackPlugin.files.chunks.app.css[0] %>" rel="stylesheet">
+  </head>
+  <body class="">
+    <div id="app"></div>
+    <script src="<%= htmlWebpackPlugin.files.chunks.app.entry %>"></script>
+  </body>
+</html>

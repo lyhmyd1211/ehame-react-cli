@@ -1,0 +1,36 @@
+.sys-org{
+  padding: 10px;
+  .org-nav{
+    float: left;
+    .org-nav-oper{
+      button{
+        margin-right: 20px;
+      }
+    }
+  }
+  .org-operdetail{
+    float: left;
+    width: 300px;
+    margin: 50px 0 0 200px;
+    display: none;
+    .edit-btns{
+      .org-submit-btn{
+        margin: 30px;
+        margin-left: 100px;
+      }
+    }
+  }
+  &:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+  &.sys-org-edit{
+    .org-operdetail{
+      display: block;
+    }
+  }
+}
