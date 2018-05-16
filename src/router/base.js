@@ -102,13 +102,14 @@ export default class Base extends Component {
   render() {
     const { children, powers } = this.props;
     const { breadcrumb } = this.state;
-    console.log('breadcrumb', breadcrumb);
+
+    /**可判断是否只可点击二级面包屑 */
     const breadcrumbItems = 
       breadcrumb.map(item=>{
         return <Breadcrumb.Item key={item.title}>
-          {/* <NavLink to={`${item.url}`}>{item.title}</NavLink> */}
           <a href={`${item.url}`}>{item.title}</a>
         </Breadcrumb.Item>;});
+
     return (
       <Layout>
         <Affix style={{ position: 'relative', zIndex: 99 }}>
@@ -117,8 +118,8 @@ export default class Base extends Component {
             <Head />
           </Header>
         </Affix>
-        <Layout style={{ overflow: 'hidden' }} className="layout">
-          <Sider
+        <Layout style={{ overflow: 'hidden' }} className="base-layout">
+          {/* <Sider
             collapsible
             collapsed={this.state.collapsed}
             onCollapse={this.toggleCollapsed}
@@ -128,14 +129,14 @@ export default class Base extends Component {
             style={
               { background: '#fff' }
             }
-          >
-            <Affix offsetTop={101}>
-              <SideMenu menu={getsidebarMenu(sidebarMenu, powers)} {...this.state} toggleCollapsed={this.toggleCollapsed} />
-            </Affix>
-          </Sider>
+          > */}
+          <Affix offsetTop={64}>
+            <SideMenu menu={getsidebarMenu(sidebarMenu, powers)} {...this.state} toggleCollapsed={this.toggleCollapsed} />
+          </Affix>
+          {/* </Sider> */}
           
           <Content style={{ overflow: 'auto' }}>
-            <Breadcrumb>
+            <Breadcrumb style={{padding:'20px'}}>
               {breadcrumbItems}
             </Breadcrumb>
             {            
