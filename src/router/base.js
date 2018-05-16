@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Layout, Affix } from 'antd';
+import { Layout, Affix, Breadcrumb  } from 'antd';
 import { sidebarMenu } from './models';
 import { getBreadcrumb } from '../view/component/tools';
-
 import SideMenu from '../view/component/sidemenu.js';
-
 import Head from '../view/component/head.js';
-import { Main } from 'yrui';
+// import { Main } from 'yrui';
 const fold = require('../styles/images/sidebarMenu/icon_fold.png');
 const un_fold = require('../styles/images/sidebarMenu/icon_unfold.png');
 
@@ -104,6 +102,13 @@ export default class Base extends Component {
   render() {
     const { children, powers } = this.props;
     const { breadcrumb } = this.state;
+    console.log('breadcrumb', breadcrumb);
+    const breadcrumbItems = 
+      breadcrumb.map(item=>{
+        return <Breadcrumb.Item key={item.title}>
+          {/* <NavLink to={`${item.url}`}>{item.title}</NavLink> */}
+          <a href={`${item.url}`}>{item.title}</a>
+        </Breadcrumb.Item>;});
     return (
       <Layout>
         <Affix style={{ position: 'relative', zIndex: 99 }}>
@@ -128,8 +133,11 @@ export default class Base extends Component {
               <SideMenu menu={getsidebarMenu(sidebarMenu, powers)} {...this.state} toggleCollapsed={this.toggleCollapsed} />
             </Affix>
           </Sider>
-
+          
           <Content style={{ overflow: 'auto' }}>
+            <Breadcrumb>
+              {breadcrumbItems}
+            </Breadcrumb>
             {            
               children
             }
