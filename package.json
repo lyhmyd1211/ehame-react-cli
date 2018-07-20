@@ -1,8 +1,9 @@
 {
-  "name": "Desktop",
-  "version": "1.0.0",
-  "description": "",
+  "name": "ehame-react-cli",
+  "version": "1.0.1",
+  "description": "A simple react dependencies cli",
   "main": "scripts/server.js",
+  "git repository": "https://github.com/lyhmyd1211/ehame-react-cli.git",
   "directories": {
     "test": "test"
   },
@@ -13,8 +14,12 @@
     "lint": "eslint app/**/*.{js,jsx}",
     "precommit": "npm run lint"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cli",
+    "react",
+    "init"
+  ],
+  "author": "lyhmyd1211",
   "license": "ISC",
   "devDependencies": {
     "@ersinfotech/merge": "^1.0.0",
@@ -45,6 +50,7 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.18.0",
     "imagemin-pngquant": "^5.1.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^22.4.3",
